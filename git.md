@@ -472,9 +472,25 @@ git ls-tree HEAD~2
 git restore --staged file1 file2
 ```
 
-### restore all files
+### unstage all files
+
+```
+git restore --staged .
+```
+
+### discard all changes (be careful)
 
 ```
 git restore . 
 ```
+
+### remove non-add files and directories
+
+```
+git status -s
+git clean -fd
+git status -s
+```
+
+it will clear all "??" items
 
