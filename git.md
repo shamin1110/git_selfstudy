@@ -82,7 +82,7 @@ git config --global user.email xxxx@xxx.com
 git config --gloabal core.editor "code --wait"
 ```
 
-### git config
+### <a name="git_config">git config</a>
 
 ```
 git config --global -e
@@ -506,4 +506,44 @@ git status -s
 ```
 
 head~1 is the previous version which is before the latest version.
+
+# Upload local repository to Github
+
+## step1: create a new repository in GitHub
+
+generate the git repository remote url
+
+```
+https://github.com/shamin1110/git_selfstudy.git
+```
+
+## step2: init local git repository 
+
+using following command
+
+```
+git init
+git add .
+git commit -am "inial version"
+```
+
+## step3: link remote repository with local
+
+```
+git remote add origin https://github.com/shamin1110/git_selfstudy.git
+```
+
+or
+
+```
+git remote set-url origin https://github.com/shamin1110/git_selfstudy.git
+```
+
+## step4: push local to remote repository
+
+```
+git push -u origin master
+```
+
+about push access right, follow [git config](#git_config) section to set your email, name
 
