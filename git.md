@@ -7,11 +7,11 @@
 
 ### Centralized Type
 
-<img src="../../../Users/Shamin_Yang/AppData/Roaming/Typora/typora-user-images/image-20210528144815512.png" alt="image-20210528144815512" style="zoom:80%;" />
+<img src="image-20210528144815512.png" alt="image-20210528144815512" style="zoom:80%;" />
 
 ### Distributed Type
 
-<img src="../../../Users/Shamin_Yang/AppData/Roaming/Typora/typora-user-images/image-20210528145107520.png" alt="image-20210528145107520" style="zoom:70%;" />
+<img src="image-20210528145107520.png" alt="image-20210528145107520" style="zoom:70%;" />
 
 ## Why Git
 
@@ -102,7 +102,7 @@ git config --global -e
 
 ### autocrlf Behavior
 
-<img src="../../../Users/Shamin_Yang/AppData/Roaming/Typora/typora-user-images/image-20210528155052814.png" alt="image-20210528155052814" style="zoom:67%;" />
+<img src="image-20210528155052814.png" alt="image-20210528155052814" style="zoom:67%;" />
 
 ### autocrlf setting command
 
@@ -170,7 +170,7 @@ git init
 git add file1 file2
 ```
 
-<img src="../../../Users/Shamin_Yang/AppData/Roaming/Typora/typora-user-images/image-20210529150503334.png" alt="image-20210529150503334" style="zoom:67%;" />
+<img src="image-20210529150503334.png" alt="image-20210529150503334" style="zoom:67%;" />
 
 ### add all files not sub directories
 
@@ -224,7 +224,7 @@ git commit -m "initial commit"
 git commit -am "initial commit with all files"
 ```
 
-<img src="../../../Users/Shamin_Yang/AppData/Roaming/Typora/typora-user-images/image-20210529150653963.png" alt="image-20210529150653963" style="zoom:67%;" />
+<img src="image-20210529150653963.png" alt="image-20210529150653963" style="zoom:67%;" />
 
 ### commit information
 
