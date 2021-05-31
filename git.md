@@ -430,7 +430,7 @@ git log --oneline --reverse
 git log -n
 ```
 
-n is previous commit index: 1,2,3,4...
+n is previous commit index: 0,1,2,3,4..., 0 is latest commit
 
 ### view commit
 
@@ -443,7 +443,7 @@ git show HEAD~
 git show HEAD~n
 ```
 
-n is previous commit index: 1,2,3,4...
+n is previous commit index: 0,1,2,3,4..., 0 is latest commit
 
 ### view commit specific file changes
 
@@ -493,4 +493,17 @@ git status -s
 ```
 
 it will clear all "??" items
+
+### restore a file to earlier version
+
+lastest version deleted a file "hello.txt", now we will restore this deleted file.
+
+```
+git restore --source=head~1 bin/hello.txt
+git ls-files bin
+git add bin/hello.txt
+git status -s
+```
+
+head~1 is the previous version which is before the latest version.
 
