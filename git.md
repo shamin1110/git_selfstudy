@@ -31,10 +31,10 @@ all list in website: https://git-scm.com/downloads/guis
 
 ### 2 top popular Git UI IDE
 
-| GIT IDE Tools | Remark                   |
-| ------------- | ------------------------ |
-| GitKraken     | not free for commercial  |
-| SourceTree    | free for Windows and Mac |
+| GIT IDE Tools | Remark                                                     |
+| ------------- | ---------------------------------------------------------- |
+| GitKraken     | not free for commercial, but free for personal development |
+| SourceTree    | free for Windows and Mac                                   |
 
 ## Why need Git Command Line
 
@@ -138,7 +138,7 @@ git config variables list
 git config -l
 ```
 
-# Git Command
+# Git Base Command
 
 ## Initial Repository
 
@@ -190,7 +190,7 @@ git add -A
 git add *.cs
 ```
 
-### add changed files into unstage
+### add changed files into staging area
 
 ```
 rm file_name
@@ -239,7 +239,6 @@ git commit -am "initial commit with all files"
 ### create a git ignore file
 
 ```
-
 echo logs/ > .gitignore
 code .gitignore
 ```
@@ -297,4 +296,185 @@ A = new files
 
 https://github.com/github/gitignore
 
-## View staged and unstaged codes
+## View code changes
+
+### view staged changes
+
+```
+git diff --staged
+git diff --cached
+```
+
+### view both staged and unstaged changes
+
+```
+git diff HEAD
+git status -vv
+```
+
+### view diff for branches
+
+```
+git diff branch1..branch2
+```
+
+### view diff for commit
+
+```
+git diff 1234abc..6789def
+```
+
+### view diff for last commit and current commit
+
+```
+git diff HEAD^ HEAD
+```
+
+### view diff for specific file
+
+```
+git diff myfile.txt
+git diff directory
+git diff 27fa75e myfile.txt
+git diff 27fa75e ada9b57 myfile.txt
+git diff ada9b57 my_branchname my_changed_directory/
+```
+
+### view current changes
+
+```
+git diff -v
+```
+
+### view summary of changes
+
+```
+git diff --stat <branch/commitId>
+```
+
+### set vscode as difftool
+
+```
+git config --global -e
+```
+
+```
+[core]
+  editor = code --wait --new-window
+[diff]
+  tool = vscode
+[difftool "vscode"]
+  cmd = code --wait --diff --new-window $LOCAL $REMOTE
+[merge]
+  tool = vscode
+[mergetool "vscode"]
+  cmd = code --wait --new-window $MERGED
+```
+
+### use vscode for difftool
+
+```
+git difftool -t vscode --dir-diff
+```
+
+### set beyondCompare as difftool
+
+```
+git config --global difftool.bc3.path 'c:\Program Files (x86)\Beyond Compare 3\bcomp.exe'
+git config --global diff.tool bc3
+```
+
+### set Intellij as difftool
+
+```
+[diff]
+    tool = intellij
+    guitool = intellij
+[difftool "intellij"]
+    path = D:/Program Files (x86)/JetBrains/IntelliJ IDEA 2016.2/bin/idea.bat
+    cmd = cmd \"/C D:\\workspace\\tools\\symlink\\idea\\bin\\idea.bat diff $(cd $(dirname "$LOCAL") && pwd)/$(basename "$LOCAL") $(cd $(dirname "$REMOTE") && pwd)/$(basename "$REMOTE")\"
+
+[merge]
+    tool = intellij
+[mergetool "intellij"]
+    cmd = cmd \"/C D:\\workspace\\tools\\symlink\\idea\\bin\\idea.bat merge $(cd $(dirname "$LOCAL") && pwd)/$(basename "$LOCAL") $(cd $(dirname "$REMOTE") && pwd)/$(basename "$REMOTE") $(cd $(dirname "$BASE") && pwd)/$(basename "$BASE") $(cd $(dirname "$MERGED") && pwd)/$(basename "$MERGED")\"
+    keepBackup = false
+    keepbackup = false
+    trustExitCode = true
+```
+
+### output changes into a patch file
+
+```
+git diff --no-prefix > diff_file.patch
+```
+
+## View history
+
+### view history detail
+
+```
+git log
+```
+
+### view history in oneline
+
+```
+git log --oneline
+git log --oneline --reverse
+```
+
+### view top commits
+
+```
+git log -n
+```
+
+n is previous commit index: 1,2,3,4...
+
+### view commit
+
+```
+git show <commitId>
+```
+
+```
+git show HEAD~
+git show HEAD~n
+```
+
+n is previous commit index: 1,2,3,4...
+
+### view commit specific file changes
+
+```
+git show HEAD~2:<file_name>
+```
+
+### view commit files with tree structure format
+
+```
+git ls-tree HEAD~2
+```
+
+### Git Objects
+
+- Commits
+- Blobs(Files)
+- Trees(Directories)
+- Tags
+
+## Unstage changes
+
+### unstage specific files
+
+```
+git restore --staged file1 file2
+```
+
+### restore all files
+
+```
+git restore . 
+```
+
