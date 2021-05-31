@@ -64,6 +64,12 @@ all list in website: https://git-scm.com/downloads/guis
 git config --global user.name "shamin"
 ```
 
+local
+
+```
+git config user.name "shamin"
+```
+
 ### user email
 
 ```
