@@ -190,16 +190,38 @@ git add -A
 git add *.cs
 ```
 
+### add changed files into unstage
+
+```
+rm file_name
+git add file_name
+git ls-files
+```
+
+the result won't output file_name any more.
+
 ### view changes status
 
 ```
 git status
 ```
 
+```
+git ls-files
+```
+
+### remove files from both working directory and staging area
+
+```
+git rm file2.txt *.txt
+git rm -f file2.txt *.txt
+```
+
 ### commit changes
 
 ```
 git commit -m "initial commit"
+git commit -am "initial commit with all files"
 ```
 
 <img src="../../../Users/Shamin_Yang/AppData/Roaming/Typora/typora-user-images/image-20210529150653963.png" alt="image-20210529150653963" style="zoom:67%;" />
@@ -212,3 +234,67 @@ git commit -m "initial commit"
 - Author
 - Complete snapshot
 
+## git ignore
+
+### create a git ignore file
+
+```
+
+echo logs/ > .gitignore
+code .gitignore
+```
+
+### edit .gitignore file
+
+```
+logs/
+bin/
+debug/
+test.txt
+*.bac
+backup.txt
+```
+
+### add and commit .gitigore
+
+```
+git add .gitignore
+git commit -m "add logs .gitignore"
+```
+
+it will impact the git repository
+
+### remove one item in .gitignore when commit
+
+temp remove settings in .gitignore
+
+```
+git rm --cached -r bin/
+git ls-files
+```
+
+above command won't list any files under "bin/"
+
+check change status, we will see the changes
+
+```
+git status
+```
+
+```
+git status -s
+```
+
+check output result:
+
+??  = the changes which have not been added into stage
+
+M = modified files
+
+A = new files
+
+### gitignore reference template
+
+https://github.com/github/gitignore
+
+## View staged and unstaged codes
