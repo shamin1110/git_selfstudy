@@ -547,3 +547,72 @@ git push -u origin master
 
 about push access right, follow [git config](#git_config) section to set your email, name
 
+# Development Command
+
+## checkout a branch base on master
+
+### fetch 
+
+```
+git fetch origin
+git fetch origin/master
+```
+
+### pull
+
+```
+git pull
+git pull origin/master
+```
+
+### checkout
+
+```
+git checkout -b [new_branch] [source_branch]
+git checkout -b develop master
+```
+
+### stage
+
+```
+git add file1 file2 file3 ...
+```
+
+### commit
+
+```
+git commit -am "some comments"
+```
+
+### stash
+
+```
+git stash
+```
+
+save temp check-out codes to stash,  then restore to origin version
+
+### pull source again and ready to merge
+
+```
+git checkout master
+git pull
+```
+
+### rebase
+
+```
+git checkout develop
+git rebase origin/master
+```
+
+will display merge items in VS if conflict exist, then finish merge in VS and force push
+
+### merge
+
+```
+git merge --no--ff master
+```
+
+
+
