@@ -610,8 +610,48 @@ will display merge items in VS if conflict exist, then finish merge in VS and fo
 
 ### merge
 
+merge develop branch into master
+
 ```
-git merge --no--ff master
+git checkout master
+git merge develop
+```
+
+### push
+
+soft push if no conflict happened
+
+```
+git push
+```
+
+force push if finished merge
+
+```
+git push --force
+```
+
+### stash pop
+
+once finished merge codes into master, we can continue modify codes in develop branch, then restore backup codes.
+
+```
+git checkout develop
+git stash pop
+```
+
+### push local branch to remote server
+
+```
+git push --set-upstream origin develop
+```
+
+## Other commands
+
+### unstage last commit
+
+```
+git reset head~
 ```
 
 
