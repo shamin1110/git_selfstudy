@@ -652,7 +652,7 @@ git push --set-upstream origin develop
 
 ## Other commands
 
-### unstage last commit
+### remove last commit and set to unstage
 
 ```
 git reset head~
@@ -663,6 +663,8 @@ git reset head~
 ```
 git reset --soft head~
 ```
+
+as same as `git reset head~`
 
 ### hard remove commit and remove changes
 
@@ -682,9 +684,39 @@ git branch -d [branch_name]
 git push origin --delete [branch_name]
 ```
 
-### Combine multiple commits into one
+### combine multiple commits into one
 
 ```
 git rebase -i HEAD~3
+```
+
+open editor, change all "pick" to "squash", except first one, save and close
+
+open editor again, added "#" for all, modify comments to a final, save and close.
+
+```
+git log --oneline
+```
+
+## tag
+
+### list tag
+
+```
+git tag -l
+git tag -l "v1.8.5*"
+git tag -a 0.3.3-alpha -m "desc"
+```
+
+### create tag
+
+```
+git tag -a v1.4 -m "my version 1.4"
+```
+
+### push tag
+
+```
+git push --tags
 ```
 
