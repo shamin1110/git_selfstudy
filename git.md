@@ -643,6 +643,7 @@ git stash pop
 ### push local branch to remote server
 
 ```
+git push -u orgin develop
 git push --set-upstream origin develop
 ```
 
@@ -652,6 +653,30 @@ git push --set-upstream origin develop
 
 ```
 git reset head~
+```
+
+### soft remove commit and keep changes
+
+```
+git reset --soft head~
+```
+
+### hard remove commit and remove changes
+
+```
+git reset --hard head~
+```
+
+### delete local branch
+
+```
+git branch -d [branch_name]
+```
+
+### delete remote branch
+
+```
+git push origin --delete [branch_name]
 ```
 
 
