@@ -556,6 +556,7 @@ about push access right, follow [git config](#git_config) section to set your em
 ```
 git fetch origin
 git fetch origin/master
+git fetch origin master
 ```
 
 ### pull
@@ -563,6 +564,7 @@ git fetch origin/master
 ```
 git pull
 git pull origin/master
+git pull origin master
 ```
 
 ### checkout
@@ -604,6 +606,7 @@ git pull
 ```
 git checkout develop
 git rebase origin/master
+git rebase origin master
 ```
 
 will display merge items in VS if conflict exist, then finish merge in VS and force push
