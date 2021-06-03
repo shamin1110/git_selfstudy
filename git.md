@@ -682,5 +682,9 @@ git branch -d [branch_name]
 git push origin --delete [branch_name]
 ```
 
+### Combine multiple commits into one
 
+```
+git rebase -i HEAD~3
+```
 
